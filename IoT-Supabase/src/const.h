@@ -1,25 +1,25 @@
 #include <Arduino.h>
 
 // 'supabase url' dan 'anon key' yang didapat dari laman supabase
-const String url = "your_supabase_url";
-const String apikey = "your_supabase_API_key";
+const String url = "https://bsrdzvhhtaqykofwtocw.supabase.co";
+const String apikey = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImJzcmR6dmhodGFxeWtvZnd0b2N3Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3MTg4OTc5MTMsImV4cCI6MjAzNDQ3MzkxM30.bhN4-JBYTUIPsz99j5p6RNapjYxtW-0Mr3YE4Or5n0g";
 const String table = "data";
 
 // masukkan nama wifi dan password yang ingin disambungkan
-const char *ssid = "your_ssid";
-const char *password = "your_ssid_password";
+const char *ssid = "Galaxy A71b946";
+const char *password = "123456789";
 
 unsigned long timeDelay = 300000; // berapa milidetik jeda tiap pengiriman data (5 menit)
 bool isSend = true;
 
 // tambahkan/kurangi sensor sesuai kebutuhan anda
-const int jumlahSensor = 5;
+const int jumlahSensor = 6;
 // nama sensor untuk ditampilkan pada web, isi pada array harus sesuai jumlah sensor
-String name[jumlahSensor] = {"Suhu", "Kelembapan Udara", "Iluminansi", "Kelembaban Tanah", "Pompa"};
+String name[jumlahSensor] = {"Suhu1", "Suhu2", "Kelembapan1", "Kelembapan2", "Berat1", "Berat2"};
 // tipe sensor untuk ikon web, isi pada array harus sesuai jumlah sensor
-String type[jumlahSensor] = {"temperature", "relativeHumidity", "illuminance", "soilMoisture" "On/Off"};
+String type[jumlahSensor] = {"temperature", "temperature", "relativeHumidity", "relativeHumidity", "weight", "weight"};
 // satuan data sensor untuk tampilan web, isi pada array harus sesuai jumlah sensor
-String unit[jumlahSensor] = {"Â°C", "%", "Lux", "%", ""};
+String unit[jumlahSensor] = {"°C", "°C", "%", "%", "kg", "kg"};
 // nilai data sensor
 float value[jumlahSensor];
 
